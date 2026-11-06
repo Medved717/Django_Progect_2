@@ -17,7 +17,7 @@ class Author(models.Model):
 class Book(models.Model):
 
     title = models.CharField(max_length=200, verbose_name='Наименование книги')
-    publication_data = models.DateField(verbose_name='Дата публикации')
+    publication_date = models.DateField(verbose_name='Дата публикации')
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
 
     class Meta:
@@ -27,5 +27,3 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
-
-
